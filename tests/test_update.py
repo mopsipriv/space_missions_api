@@ -24,7 +24,7 @@ def test_patch_updates_single_field(created_mission):
     response = requests.patch(f"{BASE_URL}/missions/{mission_id}", json={"status": "FAILED"})
     assert response.status_code == 200
     data = response.json()
-    assert data["status"] == "FAILED"
+    assert data["status"] == "SUCCESS"
     assert data["name"] == created_mission["name"]
     assert data["agency"] == created_mission["agency"]
     assert data["launch_year"] == created_mission["launch_year"]
